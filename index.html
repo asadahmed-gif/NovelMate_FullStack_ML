@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovelMate | Book Intelligence</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="eyebrow">A FULL-STACK MACHINE LEARNING PROJECT</div>
+    <h1>Novel<span>Mate</span></h1>
+    <p>Explore a book's predicted rating and discover whether it may be highly rated.</p>
+  </header>
+
+  <main class="cards">
+    <section class="card">
+      <div class="tag">MODEL 01 · REGRESSION</div>
+      <h2>Predict a book rating</h2>
+      <p class="hint">Enter book statistics. The model estimates an average rating from 0 to 5.</p>
+      <form id="regression-form">
+        <label>Number of books/editions<input name="books_count" type="number" min="0" value="1" required></label>
+        <label>Original publication year<input name="original_publication_year" type="number" min="0" max="2026" value="2000" required></label>
+        <label>Number of ratings<input name="ratings_count" type="number" min="0" value="1000" required></label>
+        <label>Total work ratings<input name="work_ratings_count" type="number" min="0" value="1000" required></label>
+        <label>Written review count<input name="work_text_reviews_count" type="number" min="0" value="100" required></label>
+        <button type="submit">Predict rating ↗</button>
+      </form>
+      <div class="result" id="regression-result" aria-live="polite">Your predicted rating will appear here.</div>
+    </section>
+
+    <section class="card">
+      <div class="tag purple">MODEL 02 · CLASSIFICATION</div>
+      <h2>Classify a book</h2>
+      <p class="hint">Use the same statistics to predict whether a book belongs to the high-rating group.</p>
+      <form id="classification-form">
+        <label>Number of books/editions<input name="books_count" type="number" min="0" value="1" required></label>
+        <label>Original publication year<input name="original_publication_year" type="number" min="0" max="2026" value="2000" required></label>
+        <label>Number of ratings<input name="ratings_count" type="number" min="0" value="1000" required></label>
+        <label>Total work ratings<input name="work_ratings_count" type="number" min="0" value="1000" required></label>
+        <label>Written review count<input name="work_text_reviews_count" type="number" min="0" value="100" required></label>
+        <button class="purple-button" type="submit">Predict category ↗</button>
+      </form>
+      <div class="result" id="classification-result" aria-live="polite">Your predicted category will appear here.</div>
+    </section>
+  </main>
+  <footer>NovelMate · Built with Python, scikit-learn, FastAPI and HTML/CSS</footer>
+  <script src="/static/script.js"></script>
+</body>
+</html>
